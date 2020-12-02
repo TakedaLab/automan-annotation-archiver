@@ -30,7 +30,7 @@ class AutomanArchiver(object):
         image_annotations_dir = os.path.join(TEMP_DIR, 'Images_Annotations')
 
         # whether or not to write image in bag file to image files
-        is_including_image = archive_info.get('include_image', False)
+        is_including_image = archive_info.get('include_image', True)
 
         max_frame = cls.__get_frame_range(
             automan_info, archive_info['project_id'], archive_info['annotation_id'])
