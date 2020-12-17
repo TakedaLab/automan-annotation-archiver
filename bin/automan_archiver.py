@@ -94,6 +94,9 @@ class AutomanArchiver(object):
         if 200 > res.status_code >= 300:
             print(f'get annotation image status_code = {res.status_code}. body = {res.text}')
             return None
+        if res.status_code >= 300:
+            print(f'Failed to get data of candidate-id {candidate_id} at frame {frame}')
+            return None
 
         # write images
         os.makedirs(images_dir, exist_ok=True)
